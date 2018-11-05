@@ -10,7 +10,7 @@ tags:
     - Docker
 ---
 
-构建打包环境
+#### 构建打包环境
 我们需要有一个 Docker 环境来打包构建 Spring Boot 项目
 
 安装 Docker 环境
@@ -27,7 +27,7 @@ systemctl  enable docker.service
 使用Docker 中国加速器
 vi  /etc/docker/daemon.json
 
-#添加后：
+#### 添加后：
 {
     "registry-mirrors": ["https://registry.docker-cn.com"],
     "live-restore": true
@@ -54,9 +54,9 @@ source /etc/profile
 安装MAVEN
 下载：http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz
 
-## 解压
+解压
 tar vxf apache-maven-3.5.2-bin.tar.gz
-## 移动
+移动
 mv apache-maven-3.5.2 /usr/local/maven3
 修改环境变量， 在/etc/profile中添加以下几行
 
@@ -86,9 +86,8 @@ mvn package
 java -jar target/cipas-web.jar
 看到 Spring Boot 的启动日志后表明环境配置没有问题，接下来我们使用 DockerFile 构建镜像。
 
-mvn package docker:build
+#### mvn package docker:build
 第一次构建可能有点慢，当看到以下内容的时候表明构建成功：
-
 ...
 Step 1 : FROM openjdk:8-jdk-alpine
 ---> 224765a6bdbe
@@ -103,26 +102,24 @@ Step 4 : ENTRYPOINT java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
 ---> 7102f08b5e95
 Removing intermediate container 85d558a10cd4
 Successfully built 7102f08b5e95
-[INFO] Built springboot/spring-boot-docker
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 54.346 s
-[INFO] Finished at: 2018-03-13T16:20:15+08:00
-[INFO] Final Memory: 42M/182M
-[INFO] ------------------------------------------------------------------------
+INFO] Built springboot/spring-boot-docker
+INFO] ------------------------------------------------------------------------
+INFO] BUILD SUCCESS
+INFO] ------------------------------------------------------------------------
+INFO] Total time: 54.346 s
+INFO] Finished at: 2018-03-13T16:20:15+08:00
+INFO] Final Memory: 42M/182M
+INFO] ------------------------------------------------------------------------
 
-使用docker images命令查看构建好的镜像：
-
+#### 使用docker images命令查看构建好的镜像：
 docker images
 REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
 zwilpan/cipas                    latest              aa97d699dbe9        3 days ago          154 MBspringboot/spring-boot-docker
 
-下一步就是运行该镜像，运行成功之前，需要确定已经关闭了防火墙，指定宿主机的ip端口与docker ip端口建立映射关系
 
+#### 下一步就是运行该镜像，运行成功之前，需要确定已经关闭了防火墙，指定宿主机的ip端口与docker ip端口建立映射关系
 docker run -p 8082:8082 -t cipas-web/cipas    
 启动完成之后我们使用docker ps 查看正在运行的镜像：
-
 docker ps
 CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                    NAMES
 fa9f3b2a0ed2        cipas-web/cipas                 "java -Djava.secur..."   3 days ago          Up 3 days           0.0.0.0:8082->8082/tcp   dazzling_yonath
@@ -150,25 +147,25 @@ FLUSH PRIVILEGES;
 用刚生成的项目镜像启动容器
 docker run --rm -d -p 8082:8082 --name cipas-web/cipas  --link mysql:cipas cipas-web/cipas
 
-# 容器终止运行后自动删除容器文件
+ 容器终止运行后自动删除容器文件
 
-# --rm
+ --rm
 
-# 后台启动
+ 后台启动
 
-# -d
+ -d
 
-# 主机端口映射到容器端口
+ 主机端口映射到容器端口
 
-# -p 8082:8082
+ -p 8082:8082
 
-# 为容器起别名
+ 为容器起别名
 
-# --name cipas-web/cipas
-# 连接提供mysql服务的容器，冒号后面是别名，别名应该和代码中的数据库地址一致(这点真的很重要)
+ --name cipas-web/cipas
+ 连接提供mysql服务的容器，冒号后面是别名，别名应该和代码中的数据库地址一致(这点真的很重要)
 
-# --link mysql:cipas
-# 由哪个镜像生成的
+ --link mysql:cipas
+ 由哪个镜像生成的
 
-# cipas-web/cipas
----------------------
+ cipas-web/cipas
+----------------
