@@ -33,7 +33,7 @@ tags:
 
 ok，了解了单例模式的含义之后就可以来实现一个单例了
 
-# 一.懒汉式(在需要的时候才实例化自己，线程不安全)
+## 一.懒汉式(在需要的时候才实例化自己，线程不安全)
 
 ### 1.在getInstance方法上加同步
     public class Singleton(){
@@ -75,8 +75,8 @@ ok，了解了单例模式的含义之后就可以来实现一个单例了
         }
     }
 
-### 二.饿汉式 （在类创建的同时就已经创建好一个静态的对象供系统使用，以后不再改变，所以天生是线程安全的。）
-
+## 二.饿汉式 （在类创建的同时就已经创建好一个静态的对象供系统使用，以后不再改变，所以天生是线程安全的。）
+    
     public class Singleton2(){
         private Singleton2(){}
         private static final Singleton2 singleton2 = new Singleton2();
@@ -86,7 +86,7 @@ ok，了解了单例模式的含义之后就可以来实现一个单例了
         }
     }
 
- ### 三.使用枚举
+ ## 三.使用枚举
 
     public enum Singleton(){
         ONE;
