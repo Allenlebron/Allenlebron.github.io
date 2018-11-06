@@ -34,8 +34,8 @@ tags:
 ok，了解了单例模式的含义之后就可以来实现一个单例了
 
 # 一.懒汉式(在需要的时候才实例化自己，线程不安全)
-    
-## 1.在getInstance方法上加同步
+
+### 1.在getInstance方法上加同步
     public class Singleton(){
         private Singleton(){}
         private static Singleton singleton = null;
@@ -47,7 +47,7 @@ ok，了解了单例模式的含义之后就可以来实现一个单例了
         }
     }
 
-## 2.双重检查锁定
+### 2.双重检查锁定
     public class Singleton(){
         private Singleton(){}
         private static Singleton singleton = null;
@@ -62,8 +62,8 @@ ok，了解了单例模式的含义之后就可以来实现一个单例了
             return singleton;
         }
     }
-    
-## 3.静态内部类  (这种比上面1、2都好一些，既实现了线程安全，又避免了同步带来的性能影响。)
+
+### 3.静态内部类  (这种比上面1、2都好一些，既实现了线程安全，又避免了同步带来的性能影响)
      public class Singleton(){
         private static class LazyHolder(){
             private static final Singleton INSTANCE= new Singleton();
@@ -74,9 +74,8 @@ ok，了解了单例模式的含义之后就可以来实现一个单例了
             return LazyHolder.INSTANCE;
         }
     }
-    
 
-# 二.饿汉式 （在类创建的同时就已经创建好一个静态的对象供系统使用，以后不再改变，所以天生是线程安全的。）
+### 二.饿汉式 （在类创建的同时就已经创建好一个静态的对象供系统使用，以后不再改变，所以天生是线程安全的。）
 
     public class Singleton2(){
         private Singleton2(){}
@@ -87,7 +86,7 @@ ok，了解了单例模式的含义之后就可以来实现一个单例了
         }
     }
 
- # 三.使用枚举
+ ### 三.使用枚举
 
     public enum Singleton(){
         ONE;
