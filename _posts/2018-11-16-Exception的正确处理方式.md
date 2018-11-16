@@ -10,11 +10,16 @@ tags:
     - JAVA基础
 ---
 Exception和Error都继承了Throwable类，在Java中只有Throwable类型的实例才可以被抛出（Throw）或者捕获（Catch）,它是异常处理机制的基本组成类型。
+
 Exception和Error体现了Java平台设计者对不同异常情况的分类。Exception是程序正常运行中，可以预料的意外情况，可能并且应该被捕获，进行相应处理。
-Error是指正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如JVM自身）处于非正常的、不可恢复状态。既然是非正常情况，所以不便于也不需要捕获，常见的比如OutOfMemoryError之类的，都是Error的子类。
-Exception又分为checked和unchecked异常，checked在源代码中必须显式的进行捕获处理，这是编译期检查的一部分，前面介绍的不可查Error，是Throwable而不是Exception
-unchecked就是运行时异常，类似NPE,ArrayIndexOutOfBoundsException之类的，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求
- 第一，理解Throwable,Exception,Error的设计和分类
+
+Error是指正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如JVM自身）处于非正常的、不可恢复状态。既然是非正常情况，所以不便于也不需要捕获，常见的OutOfMemoryError之类的，都是Error的子类。
+
+Exception又分为checked和unchecked异常，checked在源代码中必须显式的进行捕获处理，这是编译期检查的一部分，前面介绍的不可查Error，是Throwable而不是Exception，unchecked就是运行时异常，
+类似NPE,ArrayIndexOutOfBoundsException之类的，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求
+ 
+第一，理解Throwable,Exception,Error的设计和分类
+
 第二，理解Java语言中操作Throwable的元素和实践，如try..catch..finally块，throw，throws关键字
 ## 知识扩展：
     try{
@@ -23,6 +28,7 @@ unchecked就是运行时异常，类似NPE,ArrayIndexOutOfBoundsException之类�
     }catch(Exception e){
 	    //Ignore it
     }   
+
 这段代码虽然很短，但是已经违反了异常处理的两个通用原则：
 第一，尽量不要捕获类似Exception这样的通用异常，而是应该捕获特定的异常，在这里是Thread.sleep()抛出的InterruptionedException
 第二，不要生吞swallow异常，这是异常处理中要特别注意的事情，很可能导致非常难以诊断的诡异情况 
