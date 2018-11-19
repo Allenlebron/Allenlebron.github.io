@@ -7,7 +7,7 @@ author:     zwilpan
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - JAVA基础
+    - JAVA
 ---
 Exception和Error都继承了Throwable类，在Java中只有Throwable类型的实例才可以被抛出（Throw）或者捕获（Catch）,它是异常处理机制的基本组成类型。
 
