@@ -2,7 +2,7 @@
 layout:     post
 title:      单例模式了解一下
 subtitle:   设计模式系列
-date:       2018-11-05
+date:       2018-11-06
 author:     zwilpan
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
