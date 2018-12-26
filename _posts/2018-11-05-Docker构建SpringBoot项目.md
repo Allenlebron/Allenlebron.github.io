@@ -87,29 +87,29 @@ java -jar target/cipas-web.jar
 看到 Spring Boot 的启动日志后表明环境配置没有问题，接下来我们使用 DockerFile 构建镜像。
 
 #### mvn package docker:build
-第一次构建可能有点慢，当看到以下内容的时候表明构建成功：
+第一次构建可能有点慢，当看到以下内容的时候表明构建成功：  
 ...
-Step 1 : FROM openjdk:8-jdk-alpine
----> 224765a6bdbe
-Step 2 : VOLUME /tmp
----> Using cache
----> b4e86cc8654e
-Step 3 : ADD spring-boot-docker-1.0.jar app.jar
----> a20fe75963ab
-Removing intermediate container 593ee5e1ea51
-Step 4 : ENTRYPOINT java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
----> Running in 85d558a10cd4
----> 7102f08b5e95
-Removing intermediate container 85d558a10cd4
-Successfully built 7102f08b5e95
-INFO] Built springboot/spring-boot-docker
-INFO] ------------------------------------------------------------------------
-INFO] BUILD SUCCESS
-INFO] ------------------------------------------------------------------------
-INFO] Total time: 54.346 s
-INFO] Finished at: 2018-03-13T16:20:15+08:00
-INFO] Final Memory: 42M/182M
-INFO] ------------------------------------------------------------------------
+Step 1 : FROM openjdk:8-jdk-alpine  
+---> 224765a6bdbe  
+Step 2 : VOLUME /tmp  
+---> Using cache  
+---> b4e86cc8654e  
+Step 3 : ADD spring-boot-docker-1.0.jar app.jar  
+---> a20fe75963ab  
+Removing intermediate container 593ee5e1ea51  
+Step 4 : ENTRYPOINT java -Djava.security.egd=file:/dev/./urandom -jar   /app.jar  
+---> Running in 85d558a10cd4  
+---> 7102f08b5e95  
+Removing intermediate container 85d558a10cd4  
+Successfully built 7102f08b5e95  
+INFO] Built springboot/spring-boot-docker  
+INFO] ------------------------------------------------------------------------  
+INFO] BUILD SUCCESS  
+INFO] ------------------------------------------------------------------------  
+INFO] Total time: 54.346 s  
+INFO] Finished at: 2018-03-13T16:20:15+08:00  
+INFO] Final Memory: 42M/182M  
+INFO]   ------------------------------------------------------------------------
 
 #### 使用docker images命令查看构建好的镜像：
 docker images
@@ -135,8 +135,8 @@ docker部署springboot项目并连接mysql容器
 docker pull mysql
 
 运行mysql
-docker exec -it mysql bash
-sudo docker run --name=mysql -it -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+docker exec -it mysql bash  
+sudo docker run --name=mysql -it -p 3306:3306 -e   MYSQL_ROOT_PASSWORD=123456 -d mysql
 
 
 修改user表中的密码 用root可以远程连接
