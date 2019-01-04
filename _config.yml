@@ -4,7 +4,7 @@ SEOTitle: Allenlebron的博客 | BY Blog
 header-img: img/post-bg-rwd.jpg
 email: myzwilpan@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY Blog, Allenlebron的博客,JAVA,IOT,大数据"
+keyword: "Allenlebron的博客,JAVA,IOT,大数据"
 url: "http://allenlebron.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Allenlebron" # you code repository
@@ -57,7 +57,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: zwilpan
 
 # Gitalk
 gitalk:
