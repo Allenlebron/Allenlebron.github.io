@@ -4,7 +4,7 @@ title:      Jenkins + Docker
 subtitle:   自动打包部署
 date:       2018-11-22
 author:     zwilpan
-header-img: img/post-bg-debug-web.jpg
+header-img: img/post-bg-debug.png
 catalog: true
 tags:
     - Docker
@@ -41,7 +41,7 @@ tags:
     docker run -d --name myjenkins -p 8080:8080 -v /home/jenkins_home:/var/jenkins_home jenkins                               
                                             
     docker ps | grep jenkins               
-    
+
 ## 轻量级微服务的自动化发布平台  
 主要实现思路：  
 Jenkins从GitLab中获取源码，构建后生成docker镜像，
