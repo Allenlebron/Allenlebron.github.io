@@ -34,14 +34,14 @@ tags:
 
     docker images | grep jenkins  
 
-    docker run -d --name myjenkins -p 8080:8080 -v /var/jenkins_home jenkins  //运行Jenkins
+    docker run -d --name myjenkins -p 8080:8080 -v /var/jenkins_home jenkins 
 
-    mkdir /home/jenkins_home                 //创建安装目录
+    mkdir /home/jenkins_home               
 
-    docker run -d --name myjenkins -p 8080:8080 -v /home/jenkins_home:/var/jenkins_home jenkins                                 //挂载宿主机目录
+    docker run -d --name myjenkins -p 8080:8080 -v /home/jenkins_home:/var/jenkins_home jenkins                               
                                             
-    docker ps | grep jenkins                //查看Jenkins是否启动
-
+    docker ps | grep jenkins               
+    
 ## 轻量级微服务的自动化发布平台  
 主要实现思路：  
 Jenkins从GitLab中获取源码，构建后生成docker镜像，
