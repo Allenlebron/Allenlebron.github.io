@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      2019-03-03-Agile-PPP-charter6
+title:      Agile-PPP-charter6
 subtitle:   第6章
 date:       2019-03-10
 author:     zwilpan
