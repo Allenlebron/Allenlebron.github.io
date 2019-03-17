@@ -4,7 +4,7 @@ title:      Agile-PPP-charter1-5
 subtitle:   1 - 5章
 date:       2019-03-03
 author:     zwilpan
-header-img: img/bigdata.jpg
+header-img: img/post-bg-debug.png
 catalog: true
 tags:
     - 读书笔记

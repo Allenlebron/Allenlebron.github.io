@@ -4,7 +4,7 @@ title:      Agile-PPP-charter6
 subtitle:   第6章
 date:       2019-03-10
 author:     zwilpan
-header-img: img/bigdata.jpg
+header-img: img/post-bg-debug.png
 catalog: true
 tags:
     - 读书笔记
