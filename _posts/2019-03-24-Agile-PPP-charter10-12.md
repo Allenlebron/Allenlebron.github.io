@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Agile-PPP-charter7 - 9 
-subtitle:   第7 - 9章
-date:       2019-03-17
+title:      Agile-PPP-charter10 - 12
+subtitle:   第10 - 12章
+date:       2019-03-24
 author:     zwilpan
 header-img: img/post-bg-debug.png
 catalog: true
@@ -11,7 +11,7 @@ tags:
 ---
 
 
-## 敏捷软件开发读书笔记（第 7 - 9 章）
+## 敏捷软件开发读书笔记（第 10 - 12 章）
 
  + 这几章主要讲的是关于敏捷设计的几个原则，敏捷设计是一个过程，不是一个事件。它是一个持续的应用原则、模式
  以及实践来改进软件的结构和可读性的过程，它致力保持系统设计在任何时间都尽可能的简单、干净以及富有表现力
