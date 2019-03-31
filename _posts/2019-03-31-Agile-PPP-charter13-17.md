@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Agile-PPP-charter13 - 7 
+title:      Agile-PPP-charter13 - 17 
 subtitle:   第13 - 17章
 date:       2019-03-31
 author:     zwilpan
