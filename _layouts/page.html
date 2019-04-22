@@ -110,6 +110,9 @@ layout: default
                         {% if site.sidebar-about-description %}
                             <p>{{site.sidebar-about-description}}</p>
                         {% endif %}
+                        {% if site.sidebar-about-link %}
+                            <p>{{site.sidebar-about-link}}</p>
+                        {% endif %}
                         <!-- SNS Link -->
                         <ul class="list-inline">
                             {% if site.RSS %}
@@ -187,6 +190,9 @@ layout: default
                         </ul>
                         {% if site.email %}
                             <p>✉️ {{site.email}}</p>
+                        {% endif %}
+                        {% if site.link %}
+                        <p>友情链接：{{site.link}}</p>
                         {% endif %}
                     </div>
                 </section>
