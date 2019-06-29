@@ -9,7 +9,6 @@ catalog: true
 tags:
     - Docker-Compose
 ---
-
 ## docker环境安装
 ### docker安装
 1. 安装yum-utils：
@@ -118,7 +117,8 @@ docker run -p 9200:9200 -p 9300:9300 --name elasticsearch \
 3. 测试：http://192.168.1.66:9200/_plugin/head/
 ### 安装中文分词器IKAnalyzer
 1. 进入docker内部bash:docker exec -it elasticsearch /bin/bash
-2. 安装中文分词插件，执行以下命令：elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.2/elasticsearch-analysis-ik-6.2.2.zip
+2. 安装中文分词插件，执行以下命令：
+elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.2.2/elasticsearch-analysis-ik-6.2.2.zip
 3. 测试：
     - 访问header插件：打开地址http://192.168.1.66:9200/_plugin/head/ 
     - 选择复合查询，输入地址：POST:http://192.168.1.66:9200/_analyze 
